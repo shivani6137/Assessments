@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <title>Photo Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 30px;
+    }
+
+    .container {
+        border: 1px solid black;
+        padding: 20px;
+        max-width: 780px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-5">
+                <img src="1_11zon (3).jpg" alt="Image 1" class="img-thumbnail gallery-img img-fluid w-100"
+                    data-toggle="modal" data-target="#exampleModal" />
+            </div>
+            <div class="col-md-4 col-sm-5">
+                <img src="2_11zon (1).jpg" alt="Image 2" class="img-thumbnail gallery-img" data-toggle="modal"
+                    data-target="#exampleModal" />
+            </div>
+            <div class="col-md-4 col-sm-5">
+                <img src="3_11zon (2).jpg" alt="Image 3" class="img-thumbnail gallery-img" data-toggle="modal"
+                    data-target="#exampleModal" />
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-4 col-sm-5">
+                <img src="4_11zon (2).jpg" alt="Image 4" class="img-thumbnail gallery-img" data-toggle="modal"
+                    data-target="#exampleModal" />
+            </div>
+            <div class="col-md-4 col-sm-5">
+                <img src="5_11zon (1).jpg" alt="Image 5" class="img-thumbnail gallery-img" data-toggle="modal"
+                    data-target="#exampleModal" />
+            </div>
+            <div class="col-md-4 col-sm-5">
+                <img src="6_11zon (2).jpg" alt="Image 6" class="img-thumbnail gallery-img" data-toggle="modal"
+                    data-target="#exampleModal" />
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-4 col-sm-5">
+                <img src="7_11zon (2).jpg" alt="Image 7" class="img-thumbnail gallery-img" data-toggle="modal"
+                    data-target="#exampleModal" />
+            </div>
+            <div class="col-md-4 col-sm-5">
+                <img src="8_11zon (1).jpg" alt="Image 8" class="img-thumbnail gallery-img" data-toggle="modal"
+                    data-target="#exampleModal" />
+            </div>
+            <div class="col-md-4 col-sm-5">
+                <img src="9_11zon (1).jpg" alt="Image 9" class="img-thumbnail gallery-img" data-toggle="modal"
+                    data-target="#exampleModal" />
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="" alt="Expanded Image" class="img-fluid expanded-img" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".gallery-img").click(function () {
+                var imgSrc = $(this).attr("src");
+                $(".expanded-img").attr("src", imgSrc);
+                $("#exampleModal").modal("show");
+            });
+        });
+    </script>
+</body>
+
+</html>
